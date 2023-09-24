@@ -1,0 +1,107 @@
+<nav class="navbar navbar-light bg-primary">
+<div class="container-fluid">
+    <h1 style="color:white">Angular Crud</h1>
+    <div class="d-flex">
+    <button  (click)="clickonaddempolyee()" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" class="btn btn-success">Add empolyee</button>
+</div>
+</div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">email</th>
+        <th scope="col">mobile number</th>
+
+        <th scope="col">salary</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let emp of empolyedetails" >
+      <tr>
+        <th >{{emp.id}}</th>
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.LastName}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.mobile}}</td>
+        
+        <td>
+            <button   type="button" (click)="onEdit(emp)"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info ">Edit</button>
+            <button  (click)="deleteempolyeedetails(emp)" class="btn btn-danger mx-3">delete</button>
+
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+              <!-- // form content -->
+              <form [formGroup]="Employeeform" >
+
+                 <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First Name</label>
+                  <input formControlName="FirstName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text"></div>
+                 </div>
+
+                 <div class="mb-3">
+                  <label  for="exampleInputPassword1" class="form-label">Last Name</label>
+                  <input formControlName="LastName" type="text" class="form-control" id="exampleInputPassword1">
+                 </div>
+                 <div class="mb-3">
+                    <label  for="exampleInputPassword1" class="form-label">Email Id</label>
+                    <input formControlName="Email" type="email" class="form-control" id="exampleInputPassword1">
+                  </div>
+
+                  <div class="mb-3">
+
+                    <label for="exampleInputPassword1" class="form-label">mobile Number</label>
+                     <input formControlName="mobile" type="number" class="form-control" id="exampleInputPassword1">
+                   </div> 
+                  <div class="mb-3">
+
+                   <label for="exampleInputPassword1" class="form-label">Salary</label>
+                    <input formControlName="Salary" type="number" class="form-control" id="exampleInputPassword1">
+                  </div> 
+                 
+                
+               
+              </form>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showadd" class="btn btn-primary" (click)="postempolyeedetails()">Add</button>
+                <button type="button" *ngIf="showupadte" class="btn btn-info" (click)="Updateempolyeedetails()">update</button>
+
+
+              </div>
+
+
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>

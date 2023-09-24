@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "empolyee-8982a": {
+      "hosting": {
+        "victory": [
+          "empolyee-8982a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "empolyee-8982a"
+  }
+}

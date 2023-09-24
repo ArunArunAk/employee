@@ -1,0 +1,41 @@
+<p>firebase works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" formControlName="fname">
+    </div>
+    <div>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" formControlName="lname">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+  
+    <button type="submit" (click)="onpushbook()"[disabled]="userForm.invalid">Submit</button>
+    <button type="submit" (click)="onsave()" > save</button>
+
+  </form>
+<!-- </div>   -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>last name</th>
+
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let row of personaldata">
+        <td>{{row.fname}}</td>
+        <td>{{row.lname}}</td>
+        <td>{{row.email}}</td>
+
+
+      </tr>
+     
+    </tbody>
+  </table>
