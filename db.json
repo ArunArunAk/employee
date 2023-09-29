@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "Arun",
+      "LastName": "G",
+      "Email": "arunarun2gs@gmail.com",
+      "mobile": 123445,
+      "salary": 12345
+    },
+    {
+      "id": 3,
+      "firstName": "Arun",
+      "LastName": "g",
+      "Email": "priya@gmail.com",
+      "mobile": 454321445,
+      "salary": 1111234
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

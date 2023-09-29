@@ -1,2 +1,52 @@
-<employe></employe>
-<!-- <firebase></firebase> -->
+<!-- <app-routing></app-routing> -->
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="#">ArunG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav">
+
+        <li class="nav-item" routerLinkActive=" " [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/employee" skipLocationChange="true" >Employee</a>
+          </li>
+      
+     
+
+        <li class="nav-item"  routerLinkActive="active"> 
+          <a class="nav-link" routerLink="/material-ui" skipLocationChange="true"  >material-ui</a>
+        </li>
+
+        <li class="nav-item"  routerLinkActive="active" >
+            <a class="nav-link" routerLink="/firebase"  skipLocationChange="true" >firebase</a>
+          </li>
+
+          <li class="nav-item"  routerLinkActive="active" >
+            <a class="nav-link" routerLink="/blog"  >Blog</a>
+          </li>
+
+          <li class="nav-item"  routerLinkActive="active" >
+            <a class="nav-link" routerLink="/login"  >login</a>
+          </li>
+          <li class="nav-item"  routerLinkActive="active" >
+            <a class="nav-link" routerLink="superadmin/register"  >superadmin</a>
+          </li>
+ 
+      </ul>
+    </div>
+  </nav>
+
+  <label for="label">enter</label>
+  <input type="text" name="label" [(ngModel)]="value"> //routparam1
+  <br>
+
+  <button class="btn btn-success" (click)="gotoemployee()">go to employee</button>
+
+ <router-outlet></router-outlet> //this is called single page application
+<!-- <app-puzzle></app-puzzle> -->
+
+<!-- <app-stories></app-stories> -->
+ 
+  
